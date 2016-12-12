@@ -1,156 +1,223 @@
-<!DOCTYPE html>
 <html>
-	<head>
-		<title>HTML5 Layout</title>
-		<style type="text/css">
-			header, section, footer, aside, nav, article, figure, figcaption {
-				display: block;}
-			body {
-				color: #666666;
-				background-color: #f9f8f6;
-				background-image: url("images/dark-wood.jpg");
-				background-position: center;
-				font-family: Georgia, Times, serif;
-				line-height: 1.4em;
-				margin: 0px;}
-			.wrapper {
-				width: 940px;
-				margin: 20px auto 20px auto;
-				border: 2px solid #000000;
-				background-color: #ffffff;}
-			header {
-				height: 160px;
-				background-image: url("images/header.jpg");}
-			h1 {
-				text-indent: -9999px;
-				width: 940px;
-				height: 130px;
-				margin: 0px;}
-			nav, footer {
-				clear: both;
-				color: #ffffff;
-				background-color: #aeaca8;
-				height: 30px;}
-			nav ul {
-				margin: 0px;
-				padding: 5px 0px 5px 30px;}
-			nav li {
-				display: inline;
-				margin-right: 40px;}
-			nav li a {
-				color: #ffffff;}
-			nav li a:hover, nav li a.current {
-				color: #000000;}
-			section.courses {
-				float: left;
-				width: 659px;
-				border-right: 1px solid #eeeeee;}
-			article {
-				clear: both;
-				overflow: auto;
-				width: 100%;}
-			hgroup {
-				margin-top: 40px;}
-			figure {
-				float: left;
-				width: 290px;
-				height: 220px;
-				padding: 5px;
-				margin: 20px;
-				border: 1px solid #eeeeee;}
-			figcaption {
-				font-size: 90%;
-				text-align: left;}
-			aside {
-				width: 230px;
-				float: left;
-				padding: 0px 0px 0px 20px;}
-			aside section a {
-				display: block;
-				padding: 10px;
-				border-bottom: 1px solid #eeeeee;}
-			aside section a:hover {
-				color: #985d6a;
-				background-color: #efefef;}
-			a {
-				color: #de6581;
-				text-decoration: none;}
-			h1, h2, h3 {
-				font-weight: normal;}
-			h2 {
-				margin: 10px 0px 5px 0px;
-				padding: 0px;}
-			h3 {
-				margin: 0px 0px 10px 0px;
-				color: #de6581;}
-			aside h2 {
-				padding: 30px 0px 10px 0px;
-				color: #de6581;}
-			footer {
-				font-size: 80%;
-				padding: 7px 0px 0px 20px;}
-		</style>
-		<!--[if lt IE 9]>
-		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-	</head>
-	<body>
-		<div class="wrapper">
-			<header>
-				<h1>Yoko's Kitchen</h1>
-				<nav>
-					<ul>
-						<li><a href="" class="current">home</a></li>
-						<li><a href="">classes</a></li>
-						<li><a href="">catering</a></li>
-						<li><a href="">about</a></li>
-						<li><a href="">contact</a></li>
-					</ul>
-				</nav>
-			</header>
-			<section class="courses">
-				<article>
-					<figure>
-						<img src="bok-choi.jpg" alt="Bok Choi" width ="250"/>
-						<figcaption>Bok Choi</figcaption>
-					</figure>
-					<hgroup>
-						<h2>Japanese Vegetarian</h2>
-						<h3>Five week course in London</h3>
-					</hgroup>
-					<p>A five week introduction to traditional Japanese vegetarian meals, teaching you a selection of rice and noodle dishes.</p>
-				</article>    
-				<article>
-					<figure>
-						<img src="teriyaki.jpg" alt="Teriyaki sauce" width ="250" />
-						<figcaption>Teriyaki Sauce</figcaption>
-					</figure>
-					<hgroup>
-						<h2>Sauces Masterclass</h2>
-						<h3>One day workshop</h3>
-					</hgroup>
-					<p>An intensive one-day course looking at how to create the most delicious sauces for use in a range of Japanese cookery.</p>
-				</article>    
-			</section>
-			<aside>
-				<section class="popular-recipes">
-					<h2>Popular Recipes</h2>
-					<a href="">Yakitori (grilled chicken)</a>
-					<a href="">Tsukune (minced chicken patties)</a>
-					<a href="">Okonomiyaki (savory pancakes)</a>
-					<a href="">Mizutaki (chicken stew)</a>
-				</section>
-				<section class="contact-details">
-					<h2>Contact</h2>
-					<p>Yoko's Kitchen<br />
-						27 Redchurch Street<br />
-						Shoreditch<br />
-						London E2 7DP</p>
-				</section>
-			</aside>
-			<footer>
-				&copy; 2011 Yoko's Kitchen
-			</footer>
-		</div><!-- .wrapper -->
-	</body>
+<head>
+    <title>
+        CT Transit Fastrak Application
+    </title>
+<script type="text/javascript" src="Scripts/jquery-3.1.0.min.js"> </script>
+<script type="text/javascript" src="Scripts/bootstrap.js"> </script>
+<script type="text/javascript" src="Scripts/bootstrap-dropdown.js"> </script>
+<script type="text/javascript" src="Scripts/CommonFunctions.js"> </script>
+<script type="text/javascript" src="Scripts/SearchLocations.js"> </script>
+<script type="text/javascript" src="Scripts/Live_vehicle_Location.js"> </script>
+<script type="text/javascript" src="Scripts/getschd.js"> </script>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
+<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+<!-- ToDo: Change the API key -->
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHEujlbA2PJPdS8Uyg5hcKn0e-DRv5g7c&libraries=places&callback=initGoogleComponents"></script>
+<style>
+	.searchclear {
+		position: absolute;
+		right: 20px;
+		top: 0;
+		bottom: 0;
+		height: 14px;
+		margin: auto;
+		font-size: 14px;
+		cursor: pointer;	
+		z-index:99;
+	}
+	.currentLocation {
+		position: absolute;
+		right: -10px;
+		top: 0;
+		bottom: 0;
+		height: 14px;
+		margin: auto;
+		font-size: 14px;
+		cursor: pointer;			
+		z-index:100;
+	}			
+	.map {
+		height: 80%;
+		width: 80%;
+		float:right;
+   }
+   
+   .mapDirections{
+	   	height: 80%;
+		width: 20%;
+		float: left;
+		overflow-y:scroll;
+   }
+   
+   .locationTextBox{
+	   font-size: 12px;
+   }
+
+ 
+  .dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer; 
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #4CAF50;
+}
+
+.dropdown {
+	 position: relative;
+    display: inline-grid;
+}
+
+.dropdown-content {
+    display: none;
+    /*position: absolute; */
+    background-color: #f9f9f9 ; 
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #f1f1f1}
+
+.show {display:block;} 
+
+</style>
+</head>
+<body>
+	<div class="row-fluid">
+		<div class="span12 panel panel-info">
+		   <!--  <div class="panel-heading">
+			<strong class='lead text-center col-md-offset-5'>CT Fastrak Search Application</strong></div> -->
+			<div class="panel-body">
+			<!--	<form name="userCreationForm" 
+					  class="form-horizontal" role="form" novalidate> -->
+					<div class="form-group form-horizontal">
+						<label for="inputFromLocation" class="col-sm-1 control-label">From</label>
+						<div class="col-sm-3">
+							<input type="text" class="form-control locationTextBox"
+							id="inputFromLocation" 
+							name="inputFromLocation"
+							placeholder="From"
+							autocomplete="off"/>
+							
+							 <span id="clearFromLocation" class="glyphicon glyphicon-remove-circle searchclear"></span>
+							<span id="currentFromLocation" class="glyphicon glyphicon-map-marker currentLocation" 
+							title="Current Location"></span>
+						</div>
+						
+						<label for="inputToLocation" class="col-sm-1 control-label">To</label>
+						<div class="col-sm-3">
+							<input type="text" class="form-control locationTextBox"
+							id="inputToLocation" 
+							name="inputToLocation"
+							placeholder="To"
+							autocomplete="off"/>
+						<span id="clearToLocation" class="glyphicon glyphicon-remove-circle col-sm-1 searchclear"></span>
+						<span id="currentToLocation" class="glyphicon glyphicon-map-marker col-sm-1 currentLocation" title="Current Location"></span>
+						</div>
+						
+		
+				
+						<button id="btnSubmit"  class="btn btn-primary col-sm-offset-1">Plan Trip</button> 
+					<!--	<button onclick="myFunction()" id="btnSubmit"  class="dropbtn btn btn-primary col-md-offset-1">Get Schedules </button>
+						<div id="myDropdown" class="dropdown-content">
+    					<a href="#home">Home</a>
+    					<a href="#about">About</a>
+    					<a href="#contact">Contact</a>
+						</div> type="button" -->         
+					 <!--<div class="btn-group"> -->
+ 						 <!-- <button id="btnSubmit"  class="btn btn-primary col-sm-offset-1 dropdown-toggle" data-toggle="dropdown" >
+						    Get Schedules <span class='caret' /span>
+						   </button> 	
+  									<ul class="dropdown-menu">
+										    <li><a class="dropdown-item" href="https://www.cttransit.com/sites/default/files/schedules/F_102_WkdySched.pdf">102</a>
+										    </li>
+										    <li><a class="dropdown-item" href="#">101</a></li>
+										    <li><a class="dropdown-item" href="#">144</a></li> 
+ 									</ul> 
+-->
+
+<!-- Example single danger button -->
+<div class="btn-group">
+  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   Get Schedules <span class='caret' /span>
+  </button>
+  <div class="dropdown-menu">
+   
+    <li><a class="dropdown-item" href="https://www.cttransit.com/sites/default/files/schedules/F_101_Wkdysched_0.pdf">101</a> </li>	
+    <li><a class="dropdown-item" href="https://www.cttransit.com/sites/default/files/schedules/F_102_WkdySched.pdf">102</a></li>				   
+    <li><a class="dropdown-item" href="https://www.cttransit.com/sites/default/files/2016-04/F_121_WkdySched.pdf">121</a> </li>	
+    <li><a class="dropdown-item" href="https://www.cttransit.com/sites/default/files/schedules/F_128_WkdySched_0.pdf">128</a></li>	
+     <li><a class="dropdown-item" href="https://www.cttransit.com/sites/default/files/2016-05/F_140_WkdySched.pdf">140</a> </li>	
+    <li><a class="dropdown-item" href="https://www.cttransit.com/sites/default/files/2016-05/F_144_WkdySched.pdf">144</a></li>	
+    <li><a class="dropdown-item" href="https://www.cttransit.com/sites/default/files/2016-05/F_153_WkdySched.pdf">153</a> </li>	
+    <li><a class="dropdown-item" href="https://www.cttransit.com/sites/default/files/schedules/F_161_WkdySched.pdf">161</a></li>
+  </div>
+</div>
+
+
+
+  							</div> 	
+
+  <!--This div is for search and get schedules  display -->							
+	<!--				</div>
+			</div>	
+		</div>		-->		
+<!--This is for Find Directions Tab display -->
+	<!--<div class="row-fluid">
+		<div class="span12 panel panel-info">
+		   <!--  <div class="panel-heading">
+			<strong class='lead text-center col-md-offset-5'>CT Fastrak Search Application</strong></div> -->
+		<!--<div class="panel-body"> 
+			<div class="form-group form-horizontal"> --> 
+						<label for="inputFindLocation" class="col-sm-1 control-label">Find Location</label>
+							<div class="col-sm-3">
+								<input type="text" class="form-control locationTextBox"
+								id="inputFindLocation" 
+								name="inputFindLocation"
+								placeholder="Enter Location Name"
+								autocomplete="off"/>
+								
+								 <span id="clearFindLocation" class="glyphicon glyphicon-remove-circle searchclear"></span>
+								<span id="currentFromLocation" class="glyphicon glyphicon-map-marker currentLocation" 
+								title="Current Location"></span>
+							</div>
+					
+			</div>  		
+						  						
+					
+				<!-- </form> -->
+				</div>
+		</div>			
+	</div>
+
+
+<!--This is for Directions display -->
+	<div class="row-fluid">
+		<div id="divDirections" class="col-md-2 mapDirections">
+			Directions will be displayed here
+		</div>
+		<div id="divTransitMap" class="col-md-10 map">	
+		</div>	
+	</div>
+
+    	
+				
+				
+<!--This is for Directions display -->
+
+</body>
 </html>
